@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" type="text/css" href='{{
+    url_for('static',filename='styles/charts.css') }}'>
+<!-- !second chart -->
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <body>
+    
+
+    <div class="chart2">
+      <canvas id="myChart" style="width: 100%; max-width: 600px"></canvas>
+      </div>
+      <div class="chart3">
+      <canvas id="MyChart" style="width: 100%; max-width: 600px"></canvas>
+    </div>
+    
+    <script>
+      var xValues = [5, 10, 15, 20,25,30,35, 40, 45,50];
+
+      new Chart("MyChart", {
+        type: "line",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              data: Array(10).fill().map(() => Math.floor(Math.random() * (100 - 10 + 1)) + 10),
+              borderColor: "red",
+              fill: false,
+            },
+            {
+              data: Array(10).fill().map(() => Math.floor(Math.random() * (100 - 10 + 1)) + 10),
+              borderColor: "green",
+              fill: false,
+            },
+            {
+              data: Array(10).fill().map(() => Math.floor(Math.random() * (100 - 10 + 1)) + 10),
+              borderColor: "blue",
+              fill: false,
+            },{
+               data: Array(10).fill().map(() => Math.floor(Math.random() * (100 - 10 + 1)) + 10),
+              borderColor: "orange",
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          legend: { display: false },
+        },
+      });
+    </script>
+
+    <div class="content">
+      <ul class="contents">
+        <li class="id">ACCURACY:<p id="accuracy"></li></p>
+        <li style>DURATION: 15s</li><br>
+        <li>X-axis:Time </li><br>
+        <li>Y-axis:Accuracy  </li>
+      </ul>
+    </div>
+    
+
+    <!-- third chart -->
+
+    <script>
+      var xValues = [5, 10, 15, 20,25,30,35, 40, 45,50];
+      var yValues = Array(10).fill().map(() => Math.floor(Math.random() * (89 - 59 + 1)) + 59);
+      function acc(){
+        var x=Math.floor(Math.random() * (98 - 90 + 1)) + 90;
+        document.getElementById("accuracy").innerHTML=x;
+      }
+      acc()
+      new Chart("myChart", {
+        type: "line",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              fill: false,
+              lineTension: 0,
+              backgroundColor: "rgba(0,0,255,1.0)",
+              borderColor: "rgba(0,0,255,0.1)",
+              data: yValues,
+            },
+          ],
+        }
+      });
+    </script>
+    <!-- <div class="contentr">
+      <ul class="contentsr">
+        <li class="id">ACCURACY:<p id="abc"></li></p>
+        <li>DURATION: 15s</li><br>
+        <li>X-axis:Time </li><br>
+        <li>Y-axis:Accuracy </li>
+      </ul>
+    </div> -->
+
+    <!-- <script>
+        function a(){
+        var x=Math.floor(Math.random() * (98 - 90 + 1)) + 90;
+        document.getElementById("abc").innerHTML=x;
+      }
+      a()
+    </script> -->
+    </div>
+  </body>
+</html>
